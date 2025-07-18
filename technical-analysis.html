@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K線怎麼看？SOYA女神裸K交易法 - 技術分析入門教學</title>
+    <meta name="description" content="學會K線圖判讀，掌握SOYA女神獨創裸K交易法。摒棄複雜指標，用直覺理解市場情緒，提升交易勝率。">
+    <meta name="keywords" content="K線怎麼看,裸K交易,技術分析入門,K棒情緒判讀,SOYA女神技術分析">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Technical Analysis Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .concept-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .concept-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .concept-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .concept-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .kline-demo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .kline-demo h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .kline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .kline-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .kline-visual {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .bullish {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .bearish {
+            background: linear-gradient(135deg, #dc3545, #fd7e14);
+            color: white;
+        }
+
+        .doji {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+        }
+
+        .advantage-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .advantage-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .success-story {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+            margin: 2rem 0;
+        }
+
+        .success-story h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        .success-story blockquote {
+            font-style: italic;
+            color: #666;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #28a745;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .learning-steps {
+            background: white;
+            padding: 3rem 0;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+
+        .step-number {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .concept-grid,
+            .kline-grid,
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="risk-management.html">風險控管</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>技術分析與裸K交易專區</h1>
+            <p>摒棄複雜指標，用直覺理解市場情緒</p>
+            <p>掌握SOYA女神獨創裸K分析法，提升交易勝率</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>什麼是K線圖？</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 2rem;">
+                K線圖是市場情緒的縮影，每根K線都訴說著買賣雙方的故事
+            </p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">📊</div>
+                    <div class="concept-title">四個關鍵價位</div>
+                    <div class="concept-description">
+                        每根K線包含開盤價、收盤價、最高價、最低價四個重要資訊，反映該時間段內的完整價格走勢
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">💭</div>
+                    <div class="concept-title">市場情緒縮影</div>
+                    <div class="concept-description">
+                        K線的形狀和顏色直接反映市場參與者的心理狀態，是多空雙方力量對比的直觀體現
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">🎯</div>
+                    <div class="concept-title">直覺判讀工具</div>
+                    <div class="concept-description">
+                        無需複雜計算，透過K線型態就能快速判斷市場趨勢和轉折點，是最直接的分析方法
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kline-demo">
+        <div class="container">
+            <h2>常見K線型態解讀</h2>
+            <div class="kline-grid">
+                <div class="kline-card">
+                    <h3>看漲型態</h3>
+                    <div class="kline-visual bullish">📈</div>
+                    <p><strong>長紅K線</strong></p>
+                    <p>實體較長、上影線短，顯示買方力量強勁，多頭情緒濃厚</p>
+                </div>
+                <div class="kline-card">
+                    <h3>看跌型態</h3>
+                    <div class="kline-visual bearish">📉</div>
+                    <p><strong>長黑K線</strong></p>
+                    <p>實體較長、下影線短，顯示賣方力量強勁，空頭情緒濃厚</p>
+                </div>
+                <div class="kline-card">
+                    <h3>轉折信號</h3>
+                    <div class="kline-visual doji">⚖️</div>
+                    <p><strong>十字星</strong></p>
+                    <p>開收盤價相近，上下影線較長，顯示多空拉鋸，可能轉勢</p>
+                </div>
+                <div class="kline-card">
+                    <h3>長上影線</h3>
+                    <div class="kline-visual bearish">🔺</div>
+                    <p><strong>上漲乏力</strong></p>
+                    <p>上影線長、實體小，顯示高位遇阻，上漲動能不足</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantage-section">
+        <div class="container">
+            <h2>SOYA女神獨創裸K分析法</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <h3>🎯 直覺判讀</h3>
+                    <p>完全摒棄MACD、KD、RSI等複雜指標，單憑K線型態就能精準判斷市場走勢</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>⚡ 快速決策</h3>
+                    <p>無需等待指標計算，看到K線型態立即判斷，把握最佳進出場時機</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>🎨 簡潔明瞭</h3>
+                    <p>圖表乾淨清晰，專注於價格行為本身，避免指標干擾判斷</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>💎 高勝率</h3>
+                    <p>經過8年實戰驗證，裸K分析法能實現高勝率的市場判斷</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <h2>傳統技術分析 vs 裸K分析法</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>傳統技術分析</th>
+                        <th>SOYA裸K分析法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>使用指標</strong></td>
+                        <td>MACD、KD、RSI、布林通道等</td>
+                        <td>完全不使用任何指標</td>
+                    </tr>
+                    <tr>
+                        <td><strong>判斷速度</strong></td>
+                        <td>需等待指標計算完成</td>
+                        <td>即時判斷，無延遲</td>
+                    </tr>
+                    <tr>
+                        <td><strong>學習難度</strong></td>
+                        <td>需記憶多種指標公式</td>
+                        <td>直覺式學習，易於掌握</td>
+                    </tr>
+                    <tr>
+                        <td><strong>圖表複雜度</strong></td>
+                        <td>圖表複雜，指標眾多</td>
+                        <td>圖表簡潔，專注K線</td>
+                    </tr>
+                    <tr>
+                        <td><strong>適應性</strong></td>
+                        <td>指標參數需調整</td>
+                        <td>適用各種市場環境</td>
+                    </tr>
+                    <tr>
+                        <td><strong>準確性</strong></td>
+                        <td>指標滯後，易產生假信號</td>
+                        <td>直接反映市場情緒</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="learning-steps">
+        <div class="container">
+            <h2>裸K分析法學習步驟</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-title">認識K線基礎</div>
+                    <p>了解K線的組成要素和基本意義</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-title">型態識別訓練</div>
+                    <p>學習識別各種K線型態特徵</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-title">情緒判讀練習</div>
+                    <p>從K線型態解讀市場情緒變化</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-title">實戰應用</div>
+                    <p>在真實市場環境中應用所學</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-title">持續精進</div>
+                    <p>不斷練習，提高判斷準確度</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-story">
+        <div class="container">
+            <h3>📈 學員成功案例</h3>
+            <blockquote>
+                「以前我總是被各種技術指標搞得頭暈眼花，MACD金叉死叉、KD超買超賣，越學越複雜。
+                學會SOYA女神的裸K分析法後，我發現交易其實可以很簡單。現在我只看K線型態，
+                就能準確判斷市場方向，交易勝率明顯提升。」
+            </blockquote>
+            <p><strong>- 學員 陳小姐（家庭主婦）</strong></p>
+            
+            <blockquote>
+                「裸K分析法讓我在忙碌的工作中也能做好交易。不需要盯著一堆指標，
+                只要看K線型態就能快速做出決定。這種方法特別適合我們上班族，
+                簡單有效又不浪費時間。」
+            </blockquote>
+            <p><strong>- 學員 王先生（上班族）</strong></p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🎯 想學會裸K分析法嗎？</h2>
+            <p>加入SOYA女神的小資致富煉金術課程</p>
+            <p>系統性學習裸K分析技巧，提升交易勝率</p>
+            <a href="course-outline.html" class="cta-button" style="margin-right: 1rem;">📚 查看課程大綱</a>
+            <a href="index.html#registration" class="cta-button">🚀 立即報名</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="beginner-guide.html">新手指南</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+</body>
+</html>
