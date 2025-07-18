@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風險控管與倉位管理 - SOYA女神外匯交易策略模組</title>
+    <meta name="description" content="學習SOYA女神獨創風險控管機制，掌握停損停利設定、倉位管理技巧，實現「賠很少、賺很多」的交易目標。">
+    <meta name="keywords" content="風險控管,停損停利,倉位管理,交易策略模組,外匯風控課程,SOYA女神風險管理">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Risk Management Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .principle-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .principle-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .principle-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+        }
+
+        .principle-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+        }
+
+        .principle-highlight p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .strategy-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .strategy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .strategy-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .strategy-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .strategy-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strategy-points li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .strategy-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .formula-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .formula-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .formula-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .formula-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .formula {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .example-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .example-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-box h4 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .example-table th,
+        .example-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .example-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .mistake-section {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .mistake-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mistake-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .mistake-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+            margin: 2rem 0;
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            color: #666;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #28a745;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .strategy-grid,
+            .formula-grid,
+            .mistake-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="risk-management.html">風險控管</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>風險控管與策略模組</h1>
+            <p>掌握SOYA女神獨創風險控管機制</p>
+            <p>學會「賠很少、賺很多」的交易秘訣</p>
+        </div>
+    </section>
+
+    <section class="principle-section">
+        <div class="container">
+            <h2>核心投資理念</h2>
+            <div class="principle-highlight">
+                <h3>🎯 賠很少、賺很多</h3>
+                <p>SOYA女神最重要的投資原則：嚴格控制每筆交易的損失，同時最大化獲利空間。透過精確的風險控管機制，確保長期穩定獲利。</p>
+            </div>
+            <div class="principle-highlight">
+                <h3>⚡ 預測式交易</h3>
+                <p>「每一天行情要跌之前，我就先買好空單，要漲之前我就先買好多單」- 提前布局，搶得先機，用時間驗證交易功力。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>獨創風險控管機制</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-icon">🛡️</div>
+                    <div class="strategy-title">極小止損設定</div>
+                    <div class="strategy-description">
+                        透過精確的技術分析，設定極小的止損點位，將單筆損失控制在最低限度
+                    </div>
+                    <ul class="strategy-points">
+                        <li>精確計算關鍵支撐阻力位</li>
+                        <li>設定最小有效止損距離</li>
+                        <li>避免不必要的大額虧損</li>
+                        <li>提高整體勝率表現</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-icon">📊</div>
+                    <div class="strategy-title">科學倉位管理</div>
+                    <div class="strategy-description">
+                        根據風險承受能力，科學計算最適合的倉位規模，確保資金安全
+                    </div>
+                    <ul class="strategy-points">
+                        <li>單筆風險不超過總資金2%</li>
+                        <li>根據止損距離調整倉位</li>
+                        <li>分散風險，避免重倉交易</li>
+                        <li>保持長期交易能力</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-icon">💰</div>
+                    <div class="strategy-title">獲利最大化策略</div>
+                    <div class="strategy-description">
+                        運用部分平倉和移動停利技巧，在保護獲利的同時最大化收益
+                    </div>
+                    <ul class="strategy-points">
+                        <li>分批出場，鎖定部分獲利</li>
+                        <li>移動停利，保護既有收益</li>
+                        <li>讓獲利持續奔跑</li>
+                        <li>達到風險報酬比最佳化</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="formula-section">
+        <div class="container">
+            <h2>關鍵計算公式</h2>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>倉位規模計算</h3>
+                    <div class="formula">
+                        倉位 = 風險金額 ÷ 止損點數
+                    </div>
+                    <p>確保每筆交易的最大損失在可控範圍內</p>
+                </div>
+                <div class="formula-card">
+                    <h3>風險報酬比</h3>
+                    <div class="formula">
+                        R/R = 預期獲利 ÷ 最大損失
+                    </div>
+                    <p>理想的風險報酬比應大於1:2</p>
+                </div>
+                <div class="formula-card">
+                    <h3>資金管理</h3>
+                    <div class="formula">
+                        單筆風險 ≤ 總資金 × 2%
+                    </div>
+                    <p>嚴格控制單筆交易風險上限</p>
+                </div>
+                <div class="formula-card">
+                    <h3>勝率計算</h3>
+                    <div class="formula">
+                        勝率 = 獲利次數 ÷ 總交易次數
+                    </div>
+                    <p>持續監控交易表現，調整策略</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="example-section">
+        <div class="container">
+            <h2>實戰案例分析</h2>
+            <div class="example-box">
+                <h4>📈 黃金交易案例：完美的風險控管</h4>
+                <table class="example-table">
+                    <tr>
+                        <th>項目</th>
+                        <th>數值</th>
+                        <th>說明</th>
+                    </tr>
+                    <tr>
+                        <td>帳戶資金</td>
+                        <td>$10,000</td>
+                        <td>初始交易資金</td>
+                    </tr>
+                    <tr>
+                        <td>單筆風險</td>
+                        <td>$200 (2%)</td>
+                        <td>最大可承受損失</td>
+                    </tr>
+                    <tr>
+                        <td>進場價位</td>
+                        <td>2,000</td>
+                        <td>黃金價格</td>
+                    </tr>
+                    <tr>
+                        <td>止損價位</td>
+                        <td>1,990</td>
+                        <td>10點止損</td>
+                    </tr>
+                    <tr>
+                        <td>倉位規模</td>
+                        <td>2手</td>
+                        <td>$200 ÷ 10點 = 2手</td>
+                    </tr>
+                    <tr>
+                        <td>目標價位</td>
+                        <td>2,030</td>
+                        <td>30點獲利目標</td>
+                    </tr>
+                    <tr>
+                        <td>風險報酬比</td>
+                        <td>1:3</td>
+                        <td>風險10點，獲利30點</td>
+                    </tr>
+                </table>
+                <p><strong>結果：</strong>此交易最大損失200美元，潛在獲利600美元，風險報酬比優異。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>多空震盪盤全攻略</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-icon">📈</div>
+                    <div class="strategy-title">多頭趨勢模組</div>
+                    <div class="strategy-description">
+                        在上升趨勢中，運用回調買入策略，順勢而為獲取最大利潤
+                    </div>
+                    <ul class="strategy-points">
+                        <li>識別主要上升趨勢</li>
+                        <li>等待回調至關鍵支撐</li>
+                        <li>設定小幅止損</li>
+                        <li>目標位設在前高附近</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-icon">📉</div>
+                    <div class="strategy-title">空頭趨勢模組</div>
+                    <div class="strategy-description">
+                        在下降趨勢中，運用反彈賣出策略，順勢做空獲取利潤
+                    </div>
+                    <ul class="strategy-points">
+                        <li>確認主要下降趨勢</li>
+                        <li>等待反彈至關鍵阻力</li>
+                        <li>設定小幅止損</li>
+                        <li>目標位設在前低附近</li>
+                    </ul>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-icon">⚖️</div>
+                    <div class="strategy-title">震盪整理模組</div>
+                    <div class="strategy-description">
+                        在震盪行情中，運用區間交易策略，高賣低買賺取波段利潤
+                    </div>
+                    <ul class="strategy-points">
+                        <li>界定震盪區間範圍</li>
+                        <li>區間上緣做空</li>
+                        <li>區間下緣做多</li>
+                        <li>準備突破後的應對</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mistake-section">
+        <div class="container">
+            <h2>⚠️ 常見風險控管錯誤</h2>
+            <div class="mistake-grid">
+                <div class="mistake-card">
+                    <h3>❌ 不設止損</h3>
+                    <p>許多投資者心存僥倖，不設置止損點，導致小虧損變成大災難。正確做法是每筆交易都必須設定止損。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>❌ 重倉交易</h3>
+                    <p>將大部分資金押注在單一交易上，一旦失敗就損失慘重。應該分散風險，控制單筆投入。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>❌ 移動止損</h3>
+                    <p>當價格接近止損時，頻繁調整止損位置，最終導致更大損失。設定後應堅持執行。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>❌ 情緒化交易</h3>
+                    <p>因為恐懼或貪婪而偏離交易計劃，破壞風險控管原則。應保持冷靜，按計劃執行。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <h3>📊 學員風控成果分享</h3>
+            <blockquote>
+                「學習SOYA女神的風險控管方法後，我的交易完全改變了。以前總是大賺大賠，
+                現在每筆交易都嚴格控制風險。雖然單次獲利不如以前瘋狂，但整體績效穩定多了，
+                三個月下來帳戶資金穩步增長。」
+            </blockquote>
+            <div class="testimonial-author">- 學員 李先生（工程師）</div>
+            
+            <blockquote>
+                「風險控管真的是交易的靈魂。學會設定合理的止損和倉位管理後，
+                我再也不用擔心單筆交易會傷害到整個投資組合。現在我可以安心睡覺，
+                因為知道最大損失都在控制範圍內。」
+            </blockquote>
+            <div class="testimonial-author">- 學員 張小姐（上班族）</div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🎯 想學會完整風險控管系統？</h2>
+            <p>加入小資致富煉金術課程，學習SOYA女神8年實戰經驗</p>
+            <p>掌握「賠很少、賺很多」的交易秘訣</p>
+            <a href="course-outline.html" class="cta-button" style="margin-right: 1rem;">📚 查看完整課程</a>
+            <a href="index.html#registration" class="cta-button">🚀 立即報名</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="beginner-guide.html">新手指南</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+</body>
+</html>
