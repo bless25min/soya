@@ -52,7 +52,8 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -60,10 +61,21 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
+            padding: 0.5rem;
         }
 
         .nav-links a:hover {
             color: #764ba2;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: #764ba2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         .hero {
@@ -110,6 +122,7 @@
             font-size: 1.1rem;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+            margin: 0.5rem;
         }
 
         .cta-button:hover {
@@ -157,6 +170,63 @@
             margin-bottom: 1rem;
         }
 
+        .nav-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            border-color: #764ba2;
+        }
+
+        .nav-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .nav-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .nav-card a {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .nav-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
         .course-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -184,6 +254,16 @@
         .info-box li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
         }
 
         .info-box li:last-child {
@@ -243,33 +323,113 @@
             color: #764ba2;
         }
 
+        .quick-links {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .quick-links h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .quick-link {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .quick-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .quick-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            transition: all 0.3s;
+        }
+
         footer {
             background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             margin-top: 4rem;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #f093fb;
             margin-bottom: 1rem;
         }
 
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
         .footer-links a {
-            color: white;
+            color: #ccc;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
             color: #f093fb;
         }
 
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
             }
             
             .hero h1 {
@@ -284,6 +444,11 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -291,22 +456,27 @@
     <header>
         <nav class="container">
             <div class="logo">SOYA 女神財商學院</div>
-            <ul class="nav-links">
-                <li><a href="#course-overview">課程總覽</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="course-outline.html">課程大綱</a></li>
                 <li><a href="instructor.html">講師介紹</a></li>
                 <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="schedule.html">開課時間</a></li>
+                <li><a href="pricing.html">費用方案</a></li>
                 <li><a href="faq.html">常見問題</a></li>
             </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰ 選單</button>
         </nav>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>小資致富煉金術｜外匯進階實戦班</h1>
+            <h1>小資致富煉金術｜外匯進階實戰班</h1>
             <p>零基礎可學，<span class="highlight">裸K分析</span>、<span class="highlight">風險控管</span>、<span class="highlight">倉位管理</span></p>
             <p>由 <strong>SOYA 女神</strong> 親自授課，8年交易經驗，上千位學員見證</p>
-            <a href="#registration" class="cta-button">立即報名 2025/07/26 開課</a>
+            <a href="schedule.html" class="cta-button">📅 查看開課時間</a>
+            <a href="pricing.html" class="cta-button">💰 了解費用方案</a>
+            <a href="#registration" class="cta-button">🚀 立即報名</a>
         </div>
     </section>
 
@@ -317,18 +487,85 @@
                 <div class="feature-card">
                     <h3>🎯 獨創裸K分析法</h3>
                     <p>完全捨棄傳統技術指標，單憑K棒型態徹底分析市場走勢，實現高勝率判斷</p>
+                    <a href="technical-analysis.html" style="color: white; text-decoration: underline;">了解詳情 →</a>
                 </div>
                 <div class="feature-card">
                     <h3>🛡️ 嚴格風險控管</h3>
                     <p>獨特風險控管機制，「賠很少、賺很多」，止損金額控制極小</p>
+                    <a href="risk-management.html" style="color: white; text-decoration: underline;">學習風控 →</a>
                 </div>
                 <div class="feature-card">
                     <h3>📊 科學倉位管理</h3>
                     <p>精準的進出場位置，保持小虧損大獲利，適當的部位規模控制</p>
+                    <a href="risk-management.html" style="color: white; text-decoration: underline;">倉位管理 →</a>
                 </div>
                 <div class="feature-card">
                     <h3>🎓 完整學習支援</h3>
                     <p>線上影片+實體課程，終身回看，多平台支援，不限時間次數</p>
+                    <a href="course-outline.html" style="color: white; text-decoration: underline;">課程大綱 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nav-section">
+        <div class="container">
+            <h2>🗺️ 完整學習導航</h2>
+            <div class="nav-grid">
+                <div class="nav-card">
+                    <h3>📚 課程大綱</h3>
+                    <p>25章節完整學習路徑，從零基礎到交易高手</p>
+                    <a href="course-outline.html">查看完整大綱</a>
+                </div>
+                <div class="nav-card">
+                    <h3>📈 技術分析教學</h3>
+                    <p>獨創裸K分析法，摒棄複雜指標，直覺判讀市場</p>
+                    <a href="technical-analysis.html">學習裸K分析</a>
+                </div>
+                <div class="nav-card">
+                    <h3>🛡️ 風險控管策略</h3>
+                    <p>核心風控機制，保護資金安全，實現穩定獲利</p>
+                    <a href="risk-management.html">掌握風控技巧</a>
+                </div>
+                <div class="nav-card">
+                    <h3>🔰 新手入門指南</h3>
+                    <p>投資新手必讀，建立正確觀念，避免常見錯誤</p>
+                    <a href="beginner-guide.html">新手入門</a>
+                </div>
+                <div class="nav-card">
+                    <h3>👨‍🏫 講師介紹</h3>
+                    <p>了解SOYA女神背景，8年實戰經驗分享</p>
+                    <a href="instructor.html">認識講師</a>
+                </div>
+                <div class="nav-card">
+                    <h3>💬 學員評價</h3>
+                    <p>真實學員成功故事，見證課程效果</p>
+                    <a href="testimonials.html">查看評價</a>
+                </div>
+                <div class="nav-card">
+                    <h3>📅 開課時間</h3>
+                    <p>最新開課資訊，課程時程安排</p>
+                    <a href="schedule.html">查看時程</a>
+                </div>
+                <div class="nav-card">
+                    <h3>💰 費用方案</h3>
+                    <p>多種付款方式，零利率分期方案</p>
+                    <a href="pricing.html">了解費用</a>
+                </div>
+                <div class="nav-card">
+                    <h3>❓ 常見問題</h3>
+                    <p>課程相關疑問，防詐騙提醒</p>
+                    <a href="faq.html">查看FAQ</a>
+                </div>
+                <div class="nav-card">
+                    <h3>✅ 退費保證</h3>
+                    <p>學不會全額退費，零風險學習保障</p>
+                    <a href="refund-policy.html">退費條款</a>
+                </div>
+                <div class="nav-card">
+                    <h3>🤝 社群活動</h3>
+                    <p>溫暖學員社群，公益活動參與</p>
+                    <a href="community-charity.html">加入社群</a>
                 </div>
             </div>
         </div>
@@ -346,6 +583,9 @@
                         <li><strong>課程天數：</strong>2天實體 + 線上回放</li>
                         <li><strong>總時數：</strong>實體12小時 + 線上10小時</li>
                     </ul>
+                    <div style="margin-top: 1rem;">
+                        <a href="schedule.html" class="cta-button">查看詳細時程</a>
+                    </div>
                 </div>
                 <div class="info-box">
                     <h3>📚 課程內容</h3>
@@ -357,6 +597,9 @@
                         <li>裸K型態判斷系統</li>
                         <li>多空震盪盤全攻略</li>
                     </ul>
+                    <div style="margin-top: 1rem;">
+                        <a href="course-outline.html" class="cta-button">查看完整大綱</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -381,6 +624,10 @@
                     <p>實體課程現場繳費</p>
                 </div>
             </div>
+            <div style="margin-top: 2rem;">
+                <a href="pricing.html" class="cta-button">查看詳細費用</a>
+                <a href="refund-policy.html" class="cta-button">退費保證</a>
+            </div>
         </div>
     </section>
 
@@ -395,14 +642,43 @@
                 <div class="feature-card">
                     <h3>✅ 全額退費保證</h3>
                     <p>學不會100%退費，無任何風險</p>
+                    <a href="refund-policy.html" style="color: white; text-decoration: underline;">查看條款 →</a>
                 </div>
                 <div class="feature-card">
                     <h3>🎥 終身回看權限</h3>
                     <p>不限時間次數，隨時複習鞏固</p>
+                    <a href="course-outline.html" style="color: white; text-decoration: underline;">了解詳情 →</a>
                 </div>
                 <div class="feature-card">
                     <h3>📱 多平台支援</h3>
                     <p>電腦、平板、手機均可學習</p>
+                    <a href="faq.html" style="color: white; text-decoration: underline;">技術支援 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <div class="container">
+            <h2>🔗 快速連結</h2>
+            <div class="links-grid">
+                <div class="quick-link">
+                    <a href="beginner-guide.html">🔰 新手指南</a>
+                </div>
+                <div class="quick-link">
+                    <a href="technical-analysis.html">📈 裸K分析</a>
+                </div>
+                <div class="quick-link">
+                    <a href="risk-management.html">🛡️ 風險控管</a>
+                </div>
+                <div class="quick-link">
+                    <a href="testimonials.html">⭐ 學員評價</a>
+                </div>
+                <div class="quick-link">
+                    <a href="instructor.html">👨‍🏫 講師介紹</a>
+                </div>
+                <div class="quick-link">
+                    <a href="community-charity.html">🤝 社群活動</a>
                 </div>
             </div>
         </div>
@@ -414,8 +690,10 @@
             <div style="text-align: center; padding: 2rem;">
                 <h3 style="color: #764ba2; margin-bottom: 1rem;">🚀 把握機會，開啟財富自由之路</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem;">2025年7月26-27日開課，名額有限，立即行動！</p>
-                <a href="tel:+886-XXX-XXXXXX" class="cta-button" style="margin-right: 1rem;">📞 電話諮詢</a>
+                <a href="tel:+886-XXX-XXXXXX" class="cta-button">📞 電話諮詢</a>
                 <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 LINE諮詢</a>
+                <a href="schedule.html" class="cta-button">📅 查看時程</a>
+                <a href="pricing.html" class="cta-button">💰 了解費用</a>
                 <div style="margin-top: 2rem;">
                     <p><strong>諮詢時間：</strong>週一至週五 09:00-18:00</p>
                     <p><strong>課程地點：</strong>台北市（詳細地址報名後通知）</p>
@@ -426,16 +704,65 @@
 
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="course-outline.html">課程大綱</a>
-                <a href="technical-analysis.html">技術分析</a>
-                <a href="risk-management.html">風險控管</a>
-                <a href="beginner-guide.html">新手指南</a>
-                <a href="testimonials.html">學員評價</a>
-                <a href="faq.html">常見問題</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>📚 課程資訊</h3>
+                    <ul class="footer-links">
+                        <li><a href="course-outline.html">課程大綱</a></li>
+                        <li><a href="schedule.html">開課時間</a></li>
+                        <li><a href="pricing.html">費用方案</a></li>
+                        <li><a href="refund-policy.html">退費保證</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>🎓 學習資源</h3>
+                    <ul class="footer-links">
+                        <li><a href="technical-analysis.html">技術分析</a></li>
+                        <li><a href="risk-management.html">風險控管</a></li>
+                        <li><a href="beginner-guide.html">新手指南</a></li>
+                        <li><a href="faq.html">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>👥 關於我們</h3>
+                    <ul class="footer-links">
+                        <li><a href="instructor.html">講師介紹</a></li>
+                        <li><a href="testimonials.html">學員評價</a></li>
+                        <li><a href="community-charity.html">社群活動</a></li>
+                        <li><a href="index.html">回到首頁</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>📞 聯絡我們</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+886-XXX-XXXXXX">電話諮詢</a></li>
+                        <li><a href="https://line.me/ti/p/~@soya">LINE客服</a></li>
+                        <li><a href="mailto:info@massenlighten.com">Email聯絡</a></li>
+                        <li><a href="faq.html">客服支援</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+                <p style="margin-top: 0.5rem; opacity: 0.8;">
+                    專業財商教育 | 8年實戰經驗 | 上千位學員見證
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // 關閉移動端菜單當點擊連結時
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
