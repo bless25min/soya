@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA社群與公益活動 - 學員社群互動與社會公益參與</title>
+    <meta name="description" content="加入SOYA女神學員社群，參與公益活動如花蓮地震公益聚餐。體驗溫暖的學習氛圍，與志同道合的夥伴一起成長。">
+    <meta name="keywords" content="Soya公益活動,學員社群,外匯課程社群活動,SOYA女神社群,財商課程社群,公益聚餐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Community Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .community-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .community-highlight h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f093fb;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #764ba2;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-points li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .feature-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .charity-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .charity-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .charity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .charity-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .charity-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .charity-date {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .charity-description {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .charity-impact {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .charity-impact h4 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .activities-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .activities-timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #e9ecef;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: #764ba2;
+            transform: scale(1.02);
+        }
+
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: #e9ecef;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: #e9ecef;
+        }
+
+        .timeline-date {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #764ba2;
+            border: 4px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .join-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .join-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .join-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .join-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .join-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-card p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #764ba2;
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #764ba2;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author {
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .gallery-section {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #ccc;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            border-color: #764ba2;
+            background: #e9ecef;
+        }
+
+        .gallery-placeholder {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-title {
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .community-stats,
+            .features-grid,
+            .charity-grid,
+            .join-grid,
+            .testimonial-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .activities-timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: auto;
+                left: 40px !important;
+                text-align: left !important;
+            }
+            
+            .timeline-content::before {
+                left: -30px !important;
+                border-right-color: #e9ecef !important;
+                border-left-color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="instructor.html">講師介紹</a></li>
+                <li><a href="community-charity.html">社群活動</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>社群與公益活動</h1>
+            <p>溫暖的學習社群，用愛回饋社會</p>
+            <p>與志同道合的夥伴一起成長，一起做公益</p>
+        </div>
+    </section>
+
+    <section class="community-highlight">
+        <div class="container">
+            <h2>🌟 SOYA 學員社群</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                超過1,200位學員組成的溫暖大家庭，不只是學習，更是人生的夥伴
+            </p>
+            <div class="community-stats">
+                <div class="stat-card">
+                    <div class="stat-number">1200+</div>
+                    <div class="stat-label">活躍學員</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">社群活動</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">公益專案</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">365</div>
+                    <div class="stat-label">天互動支援</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>🤝 社群特色與服務</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-title">即時互動交流</div>
+                    <div class="feature-description">
+                        24小時活躍的學員社群，隨時可以討論市場動態、分享交易心得
+                    </div>
+                    <ul class="feature-points">
+                        <li>LINE群組即時互動</li>
+                        <li>Facebook私密社團</li>
+                        <li>定期線上聚會</li>
+                        <li>新手專區引導</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <div class="feature-title">持續學習支援</div>
+                    <div class="feature-description">
+                        資深學員與新手互助，形成良性的學習循環
+                    </div>
+                    <ul class="feature-points">
+                        <li>每日市場分析分享</li>
+                        <li>學員交易心得分享</li>
+                        <li>疑難問題集體解答</li>
+                        <li>成功經驗傳承</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-title">共同成長激勵</div>
+                    <div class="feature-description">
+                        見證彼此的成長，一起朝向財務自由的目標前進
+                    </div>
+                    <ul class="feature-points">
+                        <li>月度績效分享</li>
+                        <li>里程碑慶祝活動</li>
+                        <li>成功案例激勵</li>
+                        <li>目標設定與追蹤</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <div class="feature-title">溫馨人情味</div>
+                    <div class="feature-description">
+                        不只是投資夥伴，更是人生路上的好朋友
+                    </div>
+                    <ul class="feature-points">
+                        <li>生日祝福與關懷</li>
+                        <li>節日問候活動</li>
+                        <li>困難時相互支持</li>
+                        <li>歡樂時共同慶祝</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="charity-section">
+        <div class="container">
+            <h2>🌈 公益活動回顧</h2>
+            <div class="charity-grid">
+                <div class="charity-card">
+                    <h3>🍽️ 花蓮地震公益聚餐</h3>
+                    <div class="charity-date">2024年4月</div>
+                    <div class="charity-description">
+                        花蓮發生地震後，SOYA學員社群立即發起公益聚餐活動，
+                        將聚餐費用捐助給受災民眾，同時為災區祈福。
+                        活動不僅展現了社群的凝聚力，更體現了回饋社會的精神。
+                    </div>
+                    <div class="charity-impact">
+                        <h4>💝 活動成果</h4>
+                        <p>• 參與學員：80+ 人<br>
+                        • 捐款金額：NT$ 15萬元<br>
+                        • 受助家庭：25個家庭<br>
+                        • 媒體報導：3家媒體關注</p>
+                    </div>
+                </div>
+                
+                <div class="charity-card">
+                    <h3>📚 偏鄉教育支援計畫</h3>
+                    <div class="charity-date">2024年6月</div>
+                    <div class="charity-description">
+                        與台東偏鄉小學合作，提供財商教育課程和電腦設備，
+                        讓偏鄉孩子也能接觸到基礎的理財觀念。
+                        SOYA女神親自前往授課，學員們也踴躍捐贈物資。
+                    </div>
+                    <div class="charity-impact">
+                        <h4>💝 活動成果</h4>
+                        <p>• 受惠學童：120+ 人<br>
+                        • 捐贈物資：文具、書籍、電腦<br>
+                        • 志工時數：200+ 小時<br>
+                        • 建立長期合作關係</p>
+                    </div>
+                </div>
+                
+                <div class="charity-card">
+                    <h3>🎄 歲末關懷送暖活動</h3>
+                    <div class="charity-date">2024年12月</div>
+                    <div class="charity-description">
+                        年末歲暇，社群發起關懷弱勢家庭活動，
+                        學員們自發性捐款購買民生用品和年貨，
+                        親自送到需要幫助的家庭手中，傳遞溫暖與愛。
+                    </div>
+                    <div class="charity-impact">
+                        <h4>💝 活動成果</h4>
+                        <p>• 關懷家庭：40個家庭<br>
+                        • 物資價值：NT$ 20萬元<br>
+                        • 參與志工：60+ 人<br>
+                        • 後續追蹤關懷</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>📅 社群活動時程</h2>
+            <div class="activities-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">每週六</div>
+                        <div class="timeline-title">線上讀書會</div>
+                        <div class="timeline-description">
+                            學員們分享投資心得、討論市場趨勢，
+                            由資深學員帶領新手共同學習成長。
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">每月第二個週日</div>
+                        <div class="timeline-title">實體聚會交流</div>
+                        <div class="timeline-description">
+                            台北、台中、高雄輪流舉辦，
+                            讓不同地區的學員都有機會面對面交流。
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">每季</div>
+                        <div class="timeline-title">成果發表會</div>
+                        <div class="timeline-description">
+                            學員分享季度投資成果，
+                            表揚優秀學員，互相激勵成長。
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">不定期</div>
+                        <div class="timeline-title">公益慈善活動</div>
+                        <div class="timeline-description">
+                            響應社會需要，組織各種公益活動，
+                            用愛回饋社會，傳遞正能量。
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">年度</div>
+                        <div class="timeline-title">感恩聚會</div>
+                        <div class="timeline-description">
+                            年度盛大聚會，回顧一年成長，
+                            表揚傑出學員，展望未來目標。
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="container">
+            <h2>💬 社群學員心聲</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「加入SOYA社群後，發現這裡不只是學習投資，更像一個溫暖的大家庭。
+                        大家互相幫助、分享經驗，遇到困難時總有人伸出援手。
+                        參與公益活動更讓我感受到回饋社會的快樂。」
+                    </div>
+                    <div class="testimonial-author">- 學員 林小姐（台北）</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「花蓮地震時，看到社群夥伴們立即響應公益聚餐，
+                        真的很感動。投資賺錢不是目的，能夠幫助需要的人才是最有意義的事。
+                        這個社群教會我的不只是投資技巧，更是做人的道理。」
+                    </div>
+                    <div class="testimonial-author">- 學員 陳先生（台中）</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「原本以為投資是很孤單的事，但在這個社群裡，
+                        每天都有夥伴分享心得、互相鼓勵。遇到虧損時有人安慰，
+                        獲利時有人祝賀，真的很溫暖。」
+                    </div>
+                    <div class="testimonial-author">- 學員 王太太（高雄）</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        「社群的讀書會讓我學到很多課堂外的知識，
+                        資深學員的無私分享讓我少走很多冤枉路。
+                        現在我也會主動幫助新加入的學員，薪火相傳。」
+                    </div>
+                    <div class="testimonial-author">- 學員 張同學（新竹）</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>📸 活動照片集錦</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">📷</div>
+                    <div class="gallery-title">花蓮地震公益聚餐</div>
+                    <div class="gallery-description">學員們齊聚一堂，為災區祈福募款</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🎓</div>
+                    <div class="gallery-title">偏鄉教育支援</div>
+                    <div class="gallery-description">SOYA女神親自到偏鄉授課</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🤝</div>
+                    <div class="gallery-title">月度實體聚會</div>
+                    <div class="gallery-description">學員面對面交流學習心得</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🎉</div>
+                    <div class="gallery-title">年度感恩聚會</div>
+                    <div class="gallery-description">慶祝一年來的成長與收穫</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">📚</div>
+                    <div class="gallery-title">線上讀書會</div>
+                    <div class="gallery-description">每週六固定的學習分享時光</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🎄</div>
+                    <div class="gallery-title">歲末送暖活動</div>
+                    <div class="gallery-description">將溫暖送到需要的家庭</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-section">
+        <div class="container">
+            <h2>🚀 如何加入我們的社群</h2>
+            <div class="join-grid">
+                <div class="join-card">
+                    <h3>🎓 完成課程學習</h3>
+                    <p>報名並完成小資致富煉金術課程，即可自動加入學員專屬社群</p>
+                </div>
+                
+                <div class="join-card">
+                    <h3>💬 加入LINE群組</h3>
+                    <p>課程結束後會收到社群LINE群組邀請，開始您的社群互動之旅</p>
+                </div>
+                
+                <div class="join-card">
+                    <h3>📱 關注FB社團</h3>
+                    <p>加入Facebook私密社團，參與更深度的討論與活動資訊分享</p>
+                </div>
+                
+                <div class="join-card">
+                    <h3>🤝 參與實體活動</h3>
+                    <p>踴躍參加各種線下聚會和公益活動，結識更多志同道合的夥伴</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>💝 一起加入這個溫暖的大家庭</h2>
+            <p>不只學習投資技巧，更要學習人生價值</p>
+            <p>與1,200+位夥伴一起成長，一起做公益</p>
+            <a href="index.html#registration" class="cta-button" style="margin-right: 1rem;">🎯 立即報名課程</a>
+            <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 了解社群資訊</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
+                用愛回饋社會，用知識改變人生 💝
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
