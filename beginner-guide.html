@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投資新手入門指南 - 學投資從哪開始？小資族理財第一步</title>
+    <meta name="description" content="投資新手必看！學投資應該從控制風險開始，而不是選產品。SOYA女神教你建立正確投資觀念，避免新手常犯錯誤。">
+    <meta name="keywords" content="學投資從哪開始,新手投資指南,小資族理財,股票新手怎麼開始,投資新手教學,理財入門">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Beginner Guide Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .key-principle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .key-principle h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .principle-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+        }
+
+        .principle-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+        }
+
+        .principle-highlight p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .mistake-section {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .mistake-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mistake-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .mistake-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .mistake-card p {
+            line-height: 1.6;
+        }
+
+        .step-section {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .mindset-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .mindset-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .mindset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mindset-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .mindset-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .mindset-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mindset-card li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mindset-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .comparison-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .recommendation-section {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .recommendation-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-left: 5px solid #28a745;
+        }
+
+        .recommendation-card h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #28a745;
+            margin: 2rem 0;
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            color: #666;
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #28a745;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .mistake-grid,
+            .steps-grid,
+            .mindset-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="risk-management.html">風險控管</a></li>
+                <li><a href="beginner-guide.html">新手指南</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>投資新手入門指南</h1>
+            <p>學投資應該從哪裡開始？</p>
+            <p>建立正確投資觀念，避免新手常犯錯誤</p>
+        </div>
+    </section>
+
+    <section class="key-principle">
+        <div class="container">
+            <h2>投資的核心原則</h2>
+            <div class="principle-highlight">
+                <h3>🎯 先學風控，再選產品</h3>
+                <p>許多投資新手犯的第一個錯誤就是急著選產品，而忽略了風險控管。SOYA女神強調：「投資的起點應該是學會控制風險，而不是選擇投資產品。」</p>
+            </div>
+            <div class="principle-highlight">
+                <h3>💡 建立正確觀念比技巧更重要</h3>
+                <p>技術分析和投資策略固然重要，但錯誤的投資觀念會讓你在市場上屢戰屢敗。建立正確的投資心態是成功的基礎。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mistake-section">
+        <div class="container">
+            <h2>❌ 新手常犯的投資錯誤</h2>
+            <div class="mistake-grid">
+                <div class="mistake-card">
+                    <h3>🎲 把投資當賭博</h3>
+                    <p>憑感覺下單，沒有任何分析基礎，把投資當作賭博遊戲，期望一夜暴富。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>📰 盲目跟風消息</h3>
+                    <p>聽信網路消息、朋友建議或媒體報導，沒有獨立思考能力，容易成為韭菜。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>🚫 不設停損</h3>
+                    <p>心存僥倖心理，虧損時不願意認賠，希望能回本，結果越虧越多。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>💰 重倉交易</h3>
+                    <p>把大部分資金投入單一商品，缺乏風險分散概念，一旦失敗損失慘重。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>😱 情緒化決策</h3>
+                    <p>被恐懼和貪婪情緒主導，在高點追漲，在低點殺跌，違背理性投資原則。</p>
+                </div>
+                <div class="mistake-card">
+                    <h3>⚡ 急於求成</h3>
+                    <p>期望快速致富，不願意花時間學習，急於進入市場，結果交學費。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step-section">
+        <div class="container">
+            <h2>正確的投資學習步驟</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-title">建立風險意識</div>
+                    <div class="step-description">
+                        了解投資有風險，學會計算和控制風險是第一步。設定能承受的最大損失，絕不超過此限度。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-title">學習基礎知識</div>
+                    <div class="step-description">
+                        了解不同投資商品的特性，學習基本的市場運作原理和投資術語。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-title">掌握分析方法</div>
+                    <div class="step-description">
+                        學習技術分析和基本面分析，培養獨立判斷市場的能力。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-title">制定交易計劃</div>
+                    <div class="step-description">
+                        制定明確的進出場策略，設定風險控管機制，有計劃地進行交易。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-title">模擬練習</div>
+                    <div class="step-description">
+                        使用模擬交易平台練習，熟悉交易操作和策略應用，累積經驗。
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-title">小額實戰</div>
+                    <div class="step-description">
+                        開始時用小額資金實戰，逐步增加投入，在實戰中驗證和調整策略。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mindset-section">
+        <div class="container">
+            <h2>成功投資者的心態</h2>
+            <div class="mindset-grid">
+                <div class="mindset-card">
+                    <h3>🧠 理性思考</h3>
+                    <ul>
+                        <li>基於分析做決策，不憑感覺</li>
+                        <li>保持冷靜，不被情緒影響</li>
+                        <li>接受虧損是投資的一部分</li>
+                        <li>從錯誤中學習，持續改進</li>
+                    </ul>
+                </div>
+                <div class="mindset-card">
+                    <h3>⏰ 長期視角</h3>
+                    <ul>
+                        <li>投資是馬拉松，不是百米衝刺</li>
+                        <li>關注長期報酬，不在意短期波動</li>
+                        <li>持續學習，提升投資技能</li>
+                        <li>複利效應需要時間累積</li>
+                    </ul>
+                </div>
+                <div class="mindset-card">
+                    <h3>🎯 紀律執行</h3>
+                    <ul>
+                        <li>嚴格遵守交易計劃</li>
+                        <li>設定停損就要執行</li>
+                        <li>不隨意改變策略</li>
+                        <li>保持一致的投資方法</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <h2>正確 vs 錯誤的投資觀念</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>投資觀念</th>
+                        <th>錯誤做法</th>
+                        <th>正確做法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>學習順序</strong></td>
+                        <td class="incorrect">先選產品，再學風控</td>
+                        <td class="correct">先學風控，再選產品</td>
+                    </tr>
+                    <tr>
+                        <td><strong>資金分配</strong></td>
+                        <td class="incorrect">全部資金投入</td>
+                        <td class="correct">分散投資，控制比例</td>
+                    </tr>
+                    <tr>
+                        <td><strong>決策依據</strong></td>
+                        <td class="incorrect">憑感覺、聽消息</td>
+                        <td class="correct">基於分析和計劃</td>
+                    </tr>
+                    <tr>
+                        <td><strong>虧損處理</strong></td>
+                        <td class="incorrect">死抱不放，期望回本</td>
+                        <td class="correct">設定停損，及時出場</td>
+                    </tr>
+                    <tr>
+                        <td><strong>獲利目標</strong></td>
+                        <td class="incorrect">追求快速致富</td>
+                        <td class="correct">穩定長期增長</td>
+                    </tr>
+                    <tr>
+                        <td><strong>學習態度</strong></td>
+                        <td class="incorrect">急於實戰，不願學習</td>
+                        <td class="correct">持續學習，逐步進步</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="recommendation-section">
+        <div class="container">
+            <h2>為什麼選擇小資致富煉金術？</h2>
+            <div class="recommendation-card">
+                <h3>🎯 專為新手設計</h3>
+                <p>課程從零基礎開始，循序漸進地建立正確的投資觀念和技能。SOYA女神深知新手的學習痛點，課程設計特別照顧初學者需求。</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>🛡️ 風險控管優先</h3>
+                <p>課程強調「先學會控制風險，再談投資獲利」，這正是新手最需要的投資觀念。學會風險控管，才能在市場中長期生存。</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>💰 適合小資族</h3>
+                <p>課程特別適合資金有限的小資族，教授如何用小額資金開始投資，逐步累積財富。不需要大額資金也能開始學習。</p>
+            </div>
+            <div class="recommendation-card">
+                <h3>🎓 完整學習支援</h3>
+                <p>提供線上課程、實體教學、一對一助教、社群互動等完整學習支援，確保學員能真正掌握投資技能。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <h3>📈 新手學員成功轉變</h3>
+            <blockquote>
+                「以前我對投資一竅不通，總是聽別人推薦什麼就買什麼，結果虧了不少錢。
+                學了SOYA女神的課程後，我才了解什麼是正確的投資觀念。現在我會先分析，
+                設定停損，控制風險，雖然獲利不如以前瘋狂，但至少不會大虧了。」
+            </blockquote>
+            <div class="testimonial-author">- 學員 陳同學（投資新手）</div>
+            
+            <blockquote>
+                「我是完全的投資新手，以前從來不敢碰投資。課程教會我從風險控管開始，
+                讓我對投資有了信心。現在我能獨立分析市場，做出理性的投資決策。
+                最重要的是，我知道如何保護自己的資金。」
+            </blockquote>
+            <div class="testimonial-author">- 學員 林小姐（家庭主婦）</div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 準備開始您的投資學習之路？</h2>
+            <p>加入小資致富煉金術課程，從正確的投資觀念開始</p>
+            <p>建立穩固的投資基礎，避免新手常犯的錯誤</p>
+            <a href="course-outline.html" class="cta-button" style="margin-right: 1rem;">📚 查看課程內容</a>
+            <a href="index.html#registration" class="cta-button">🎯 立即報名</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+</body>
+</html>
