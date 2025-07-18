@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA課程評價與學員心得 - 真實成功案例與小資翻身故事</title>
+    <meta name="description" content="查看SOYA女神課程真實學員評價，上班族、家庭主婦成功翻轉財務的故事。外匯課程成效見證，小資致富真實案例分享。">
+    <meta name="keywords" content="Soya課程評價,學員心得,外匯課程成功案例,小資翻身故事,SOYA女神評價,財商課程見證">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Testimonials Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .stats-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f093fb;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #764ba2;
+            line-height: 1;
+        }
+
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+        }
+
+        .profile-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .profile-info h4 {
+            color: #333;
+            margin-bottom: 0.2rem;
+        }
+
+        .profile-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-content {
+            color: #555;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-result {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        .testimonial-result h5 {
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .story-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .story-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #f093fb;
+        }
+
+        .timeline-step {
+            color: #f093fb;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content {
+            line-height: 1.8;
+        }
+
+        .category-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .category-tab {
+            background: white;
+            border: 2px solid #764ba2;
+            color: #764ba2;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .category-tab.active,
+        .category-tab:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .video-testimonial {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-placeholder {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 3rem;
+            margin: 1rem 0;
+            border: 2px dashed #ccc;
+        }
+
+        .video-placeholder h4 {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-section {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .rating-overview {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .overall-rating {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-stars {
+            font-size: 2rem;
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .rating-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rating-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .rating-item h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 10px;
+            margin: 0.5rem 0;
+            overflow: hidden;
+        }
+
+        .rating-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffc107, #ff8c00);
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .testimonial-grid,
+            .stats-grid,
+            .rating-breakdown {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline-item::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>學員故事與真實評價</h1>
+            <p>見證上千位學員的成功轉變</p>
+            <p>從投資新手到穩定獲利的真實故事</p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2>課程成果數據</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1200+</div>
+                    <div class="stat-label">累積學員</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">年教學經驗</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">學員滿意度</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">完課率</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">獲利學員比例</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rating-section">
+        <div class="container">
+            <h2>課程評分</h2>
+            <div class="rating-overview">
+                <div class="overall-rating">4.8</div>
+                <div class="rating-stars">★★★★★</div>
+                <p>基於 1,200+ 位學員的真實評價</p>
+            </div>
+            <div class="rating-breakdown">
+                <div class="rating-item">
+                    <h4>課程內容</h4>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 96%"></div>
+                    </div>
+                    <p>4.8/5.0</p>
+                </div>
+                <div class="rating-item">
+                    <h4>講師教學</h4>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 94%"></div>
+                    </div>
+                    <p>4.7/5.0</p>
+                </div>
+                <div class="rating-item">
+                    <h4>學習支援</h4>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 92%"></div>
+                    </div>
+                    <p>4.6/5.0</p>
+                </div>
+                <div class="rating-item">
+                    <h4>實用性</h4>
+                    <div class="rating-bar">
+                        <div class="rating-fill" style="width: 98%"></div>
+                    </div>
+                    <p>4.9/5.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <div class="container">
+            <h2>分類學員見證</h2>
+            <div class="category-tabs">
+                <div class="category-tab active" onclick="showCategory('housewife')">家庭主婦</div>
+                <div class="category-tab" onclick="showCategory('office')">上班族</div>
+                <div class="category-tab" onclick="showCategory('student')">學生</div>
+                <div class="category-tab" onclick="showCategory('retiree')">退休族</div>
+            </div>
+
+            <div id="housewife" class="category-content active">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">陳</div>
+                            <div class="profile-info">
+                                <h4>陳美玲</h4>
+                                <p>家庭主婦 | 2個孩子的媽媽</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「以前我完全不懂投資，連K線圖都看不懂。SOYA女神的課程讓我從零開始學習，
+                            現在我可以在照顧孩子的空檔進行交易，每個月都有穩定的收入。最重要的是，
+                            我學會了風險控管，不會因為一次虧損就影響家庭生活。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>3個月後開始穩定獲利，月收入增加 15,000-25,000 元</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">王</div>
+                            <div class="profile-info">
+                                <h4>王淑芬</h4>
+                                <p>全職媽媽 | 學習6個月</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「當家庭主婦多年，一直想要有自己的收入。學會了SOYA的裸K分析法後，
+                            我發現交易其實沒有想像中複雜。現在我每天花1-2小時就能管理我的投資，
+                            而且不會影響照顧家庭的時間。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>半年累積獲利率達 35%，建立了家庭副收入來源</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="office" class="category-content">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">李</div>
+                            <div class="profile-info">
+                                <h4>李志明</h4>
+                                <p>軟體工程師 | 工作5年</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「身為工程師，我很重視邏輯和系統性。SOYA的課程給了我完整的交易框架，
+                            特別是風險控管的部分讓我印象深刻。現在我可以在不影響工作的情況下進行交易，
+                            EA自動化系統讓我不用一直盯盤。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>年化報酬率穩定維持在 25-30%，已開始規劃提早退休</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">張</div>
+                            <div class="profile-info">
+                                <h4>張雅婷</h4>
+                                <p>行政助理 | 學習1年</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「薪水有限，一直想要增加收入。學習外匯交易讓我有了新的收入來源。
+                            課程教的倉位管理讓我不會因為貪心而投入過多資金，現在每個月的交易收入
+                            已經接近我的正職薪水了。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>月交易收入從 0 增加到 28,000 元，正在存錢買房</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="student" class="category-content">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">林</div>
+                            <div class="profile-info">
+                                <h4>林大華</h4>
+                                <p>大學生 | 經濟系三年級</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「在學校學的都是理論，SOYA的課程讓我接觸到實際的交易操作。
+                            用生活費的一小部分開始練習，現在已經可以賺取零用錢了。
+                            最重要的是學會了正確的投資觀念，對未來的職涯很有幫助。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>小額資金練習，3個月獲利 60%，建立投資信心</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="retiree" class="category-content">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-profile">
+                            <div class="profile-avatar">黃</div>
+                            <div class="profile-info">
+                                <h4>黃文雄</h4>
+                                <p>退休教師 | 65歲</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            「退休後想要讓退休金增值，但不敢冒太大風險。SOYA的風險控管觀念
+                            讓我很安心，現在我可以在保本的前提下獲得比定存更好的報酬。
+                            課程內容清楚易懂，即使是我們這個年紀也能學會。」
+                        </div>
+                        <div class="testimonial-result">
+                            <h5>📈 學習成果</h5>
+                            <p>退休金年化報酬從 1% 提升到 12%，生活品質提升</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <h2>典型學員學習歷程</h2>
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-step">第一階段：學習期</div>
+                    <div class="timeline-title">建立基礎觀念 (第1-2個月)</div>
+                    <div class="timeline-content">
+                        學員從完全不懂投資開始，透過課程建立正確的風險意識和基礎知識。
+                        學習K線分析、倉位管理等基本技能，並在模擬平台練習。
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">第二階段：實戰期</div>
+                    <div class="timeline-title">小額實戰練習 (第3-4個月)</div>
+                    <div class="timeline-content">
+                        開始用小額資金進行真實交易，應用所學的策略和風險控管技巧。
+                        初期可能有小幅虧損，但透過不斷練習逐漸找到交易節奏。
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">第三階段：穩定期</div>
+                    <div class="timeline-title">建立穩定獲利 (第5-6個月)</div>
+                    <div class="timeline-content">
+                        交易技巧趨於成熟，開始有穩定的獲利表現。學會控制情緒，
+                        嚴格執行交易計劃，建立屬於自己的交易系統。
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-step">第四階段：成長期</div>
+                    <div class="timeline-title">持續優化提升 (第7個月以後)</div>
+                    <div class="timeline-content">
+                        交易收入穩定增長，開始規劃更大的財務目標。有些學員選擇增加投入，
+                        有些則專注於提高投資報酬率，朝向財務自由目標前進。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>更多學員真實回饋</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <div class="profile-avatar">楊</div>
+                        <div class="profile-info">
+                            <h4>楊先生</h4>
+                            <p>小企業主 | 45歲</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        「經營小生意資金壓力大，學會外匯交易後多了一個收入來源。
+                        SOYA教的資金管理讓我不會影響到本業資金週轉，
+                        現在交易收入已經可以支付店面租金了。」
+                    </div>
+                    <div class="testimonial-result">
+                        <h5>📈 學習成果</h5>
+                        <p>月均獲利 3-5 萬元，減輕經營壓力</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <div class="profile-avatar">劉</div>
+                        <div class="profile-info">
+                            <h4>劉小姐</h4>
+                            <p>護理師 | 夜班工作</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        「護理工作很辛苦，想要增加收入。外匯市場24小時開放，
+                        很適合我的工作時間。學會了技術分析後，
+                        我可以在休息時間進行交易，收入比加班還要好。」
+                    </div>
+                    <div class="testimonial-result">
+                        <h5>📈 學習成果</h5>
+                        <p>夜班時間交易，月收入增加 2 萬元</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <div class="profile-avatar">周</div>
+                        <div class="profile-info">
+                            <h4>周同學</h4>
+                            <p>研究生 | 24歲</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        「研究所期間想要減輕家裡負擔，學習投資理財。
+                        課程從基礎開始教，即使沒有金融背景也能理解。
+                        現在我可以自己賺取生活費，還能存一些錢。」
+                    </div>
+                    <div class="testimonial-result">
+                        <h5>📈 學習成果</h5>
+                        <p>學費生活費自給自足，累積人生第一桶金</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <div class="profile-avatar">許</div>
+                        <div class="profile-info">
+                            <h4>許太太</h4>
+                            <p>二寶媽 | 35歲</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        「有了二寶後完全沒時間工作，但又想要有收入貢獻家庭。
+                        外匯交易讓我可以在家照顧孩子的同時賺錢，
+                        而且時間很彈性，不會影響到照顧家庭。」
+                    </div>
+                    <div class="testimonial-result">
+                        <h5>📈 學習成果</h5>
+                        <p>在家工作月入 1.5-2 萬，平衡家庭與收入</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-testimonial">
+        <div class="container">
+            <h2>影片見證</h2>
+            <div class="video-placeholder">
+                <h4>🎥 學員成功故事影片</h4>
+                <p>完整的學員訪談影片即將上線</p>
+                <p>敬請期待更多真實的成功案例分享</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 您也想成為下一個成功案例嗎？</h2>
+            <p>加入我們的學員行列，開啟您的財富自由之路</p>
+            <p>1,200+ 位學員的成功經驗等您來複製</p>
+            <a href="course-outline.html" class="cta-button" style="margin-right: 1rem;">📚 了解課程內容</a>
+            <a href="index.html#registration" class="cta-button">🎯 立即報名</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="beginner-guide.html">新手指南</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+
+    <script>
+        function showCategory(category) {
+            // 隱藏所有內容
+            const contents = document.querySelectorAll('.category-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // 移除所有活動標籤
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // 顯示選中的內容
+            document.getElementById(category).classList.add('active');
+            
+            // 設置活動標籤
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
