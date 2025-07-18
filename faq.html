@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA課程FAQ - 外匯課程詐騙防範與退費保證說明</title>
+    <meta name="description" content="SOYA女神課程常見問題解答，包含課程內容、退費政策、學習支援等。了解如何防範外匯課程詐騙，確保合法學習管道。">
+    <meta name="keywords" content="Soya課程FAQ,外匯課程詐騙,財商課程保證,課程退費辦法,SOYA女神常見問題">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">FAQ Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .search-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #764ba2;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-tab {
+            background: white;
+            border: 2px solid #764ba2;
+            color: #764ba2;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .category-tab.active,
+        .category-tab:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            background: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #764ba2;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .warning-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .warning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .warning-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .warning-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .warning-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .warning-card li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-card li::before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+        }
+
+        .guarantee-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .guarantee-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .guarantee-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .guarantee-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .warning-grid,
+            .guarantee-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>常見問題解答</h1>
+            <p>解答您對課程的所有疑問</p>
+            <p>防範詐騙，確保安全學習</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="🔍 搜尋您的問題..." onkeyup="searchFAQ()">
+            </div>
+            
+            <div class="faq-categories">
+                <div class="category-tab active" onclick="showCategory('general')">一般問題</div>
+                <div class="category-tab" onclick="showCategory('course')">課程內容</div>
+                <div class="category-tab" onclick="showCategory('payment')">費用付款</div>
+                <div class="category-tab" onclick="showCategory('learning')">學習支援</div>
+                <div class="category-tab" onclick="showCategory('refund')">退費保證</div>
+                <div class="category-tab" onclick="showCategory('technical')">技術問題</div>
+            </div>
+
+            <div class="faq-container">
+                <div id="general" class="category-content">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            我完全沒有投資經驗，適合學習這個課程嗎？
+                        </div>
+                        <div class="faq-answer">
+                            非常適合！我們的課程專為零基礎學員設計，從最基礎的投資觀念開始教起。SOYA女神強調「先學風控，再選產品」，確保新手建立正確的投資觀念。課程中有完整的25章節，循序漸進地引導您從投資新手成為穩定獲利的交易者。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            外匯交易是不是很危險？會不會血本無歸？
+                        </div>
+                        <div class="faq-answer">
+                            任何投資都有風險，但關鍵在於如何控制風險。我們的課程核心就是教您如何進行風險控管，包括設定止損、倉位管理、資金分配等。只要嚴格遵守風險控管原則，將單筆風險控制在總資金的2%以內，就不會出現血本無歸的情況。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            需要多少資金才能開始學習交易？
+                        </div>
+                        <div class="faq-answer">
+                            我們建議的最小資金是美金1,000元（約台幣3萬元）。但學習期間可以先使用模擬帳戶練習，不需要投入真實資金。課程教授的倉位管理技巧，讓小資金也能安全地開始投資之路。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            外匯市場24小時開放，我需要一直盯盤嗎？
+                        </div>
+                        <div class="faq-answer">
+                            完全不需要！課程教授EA自動化系統和程式化提醒功能，讓您不用長時間盯盤。特別適合上班族和家庭主婦，每天只需要花1-2小時就能完成交易分析和執行。
+                        </div>
+                    </div>
+                </div>
+
+                <div id="course" class="category-content" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            課程總共有多長時間？包含哪些內容？
+                        </div>
+                        <div class="faq-answer">
+                            課程包含線上影片（主課7小時40分+複習2小時30分）和實體課程（2天12小時）。總共25個主要章節和4個複習章節，涵蓋外匯基礎、技術分析、風險控管、交易策略、MT4操作等完整內容。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            什麼是裸K分析法？和一般技術分析有什麼不同？
+                        </div>
+                        <div class="faq-answer">
+                            裸K分析法是SOYA女神獨創的分析方法，完全不使用MACD、KD、RSI等傳統技術指標，單純透過K線型態判斷市場走勢。這種方法更直觀、反應更快，不會有指標滯後的問題，特別適合快速變化的外匯市場。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            課程結束後還有持續的學習支援嗎？
+                        </div>
+                        <div class="faq-answer">
+                            有的！購買課程後享有終身觀看權限，可以不限次數重複學習。同時提供一對一助教答疑、學員社群互動、每日複盤教學等持續支援服務。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            課程會教我們如何選擇交易商嗎？
+                        </div>
+                        <div class="faq-answer">
+                            會的。課程中會教授如何選擇合法、安全的交易商，包括監管機構認證、點差比較、出入金便利性等考量因素。我們只推薦受到國際監管的合法交易商。
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment" class="category-content" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            課程費用是多少？有分期付款的選項嗎？
+                        </div>
+                        <div class="faq-answer">
+                            課程費用請聯繫我們的線上客服取得最新優惠價格。我們提供多種付款方式：銀行轉帳、信用卡付清、信用卡分期零利率等。一次付費即可終身學習，無其他隱藏費用。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            付款後還會有其他費用嗎？
+                        </div>
+                        <div class="faq-answer">
+                            完全沒有！我們承諾一次性收費，無會員費、無分析費、無任何隱藏費用。購買後即可享受所有課程內容和學習支援服務。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            如何確保付款安全？會不會是詐騙？
+                        </div>
+                        <div class="faq-answer">
+                            我們是合法註冊的公司（眾曜智庫股份有限公司），提供正式發票和收據。請務必透過官方管道報名付款，避免透過不明第三方或個人帳戶轉帳。所有官方聯絡方式都會在官網公布。
+                        </div>
+                    </div>
+                </div>
+
+                <div id="learning" class="category-content" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            線上課程可以在哪些裝置上觀看？
+                        </div>
+                        <div class="faq-answer">
+                            支援電腦、平板、手機等所有裝置，可透過網頁或APP觀看。課程平台為soya.teachable.com，提供高品質的學習體驗，不限觀看時間和次數。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            如果學習過程中遇到問題，可以找誰協助？
+                        </div>
+                        <div class="faq-answer">
+                            我們提供多層次的學習支援：一對一專業助教答疑、學員社群互動、線上客服協助、每日複盤教學等。確保每位學員都能得到需要的幫助。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            實體課程的地點在哪裡？如果無法參加怎麼辦？
+                        </div>
+                        <div class="faq-answer">
+                            實體課程地點在台北市（詳細地址報名後通知）。如果無法參加實體課程，可以觀看完整的線上課程內容，包含所有實體課程的錄影回放。
+                        </div>
+                    </div>
+                </div>
+
+                <div id="refund" class="category-content" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            真的有「學不會全額退費」的保證嗎？
+                        </div>
+                        <div class="faq-answer">
+                            是的！我們對課程品質非常有信心，承諾學不會可申請全額退費。具體退費條件和申請流程請聯繫客服了解詳情。我們的目標是確保每位學員都能學會並應用所學技能。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            退費的具體條件是什麼？
+                        </div>
+                        <div class="faq-answer">
+                            退費條件包括：完整參與課程學習、完成指定作業、參與模擬交易練習等。我們會評估學員的學習參與度和努力程度。詳細的退費政策請向客服索取正式文件。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            退費需要多長時間？如何申請？
+                        </div>
+                        <div class="faq-answer">
+                            符合退費條件的申請，我們會在審核通過後7-14個工作天內退還款項。申請流程：聯繫客服→提交申請表→審核學習記錄→確認退費→款項退還。
+                        </div>
+                    </div>
+                </div>
+
+                <div id="technical" class="category-content" style="display: none;">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            需要下載什麼軟體來學習交易？
+                        </div>
+                        <div class="faq-answer">
+                            主要需要下載MT4交易平台，這是業界標準的外匯交易軟體。課程中會詳細教授MT4的安裝、設定和操作方法。軟體完全免費，且支援Windows、Mac、手機等所有平台。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            電腦技能不好，會不會學不會操作？
+                        </div>
+                        <div class="faq-answer">
+                            不用擔心！課程從最基礎的電腦操作開始教起，包括軟體安裝、介面介紹、基本操作等。我們有很多學員都是電腦新手，通過耐心學習都能熟練掌握。
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            課程中提到的EA是什麼？複雜嗎？
+                        </div>
+                        <div class="faq-answer">
+                            EA（Expert Advisor）是自動交易程式，我們會提供已經設定好的EA，用於自動部分平倉和風險控管。您不需要會程式設計，只需要按照教學步驟安裝和啟用即可。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="warning-section">
+        <div class="container">
+            <h2>⚠️ 防詐騙提醒</h2>
+            <div class="warning-grid">
+                <div class="warning-card">
+                    <h3>🛡️ 官方管道確認</h3>
+                    <ul>
+                        <li>僅透過官方網站和LINE帳號報名</li>
+                        <li>不透過個人帳戶或第三方收款</li>
+                        <li>所有費用都有正式發票收據</li>
+                        <li>疑問請直接聯繫官方客服確認</li>
+                    </ul>
+                </div>
+                <div class="warning-card">
+                    <h3>❌ 常見詐騙手法</h3>
+                    <ul>
+                        <li>冒充SOYA女神進行私下收費</li>
+                        <li>要求匯款至個人帳戶</li>
+                        <li>承諾保證獲利或代操服務</li>
+                        <li>以低價課程為名行詐騙之實</li>
+                    </ul>
+                </div>
+                <div class="warning-card">
+                    <h3>✅ 安全學習守則</h3>
+                    <ul>
+                        <li>我們不帶單、不喊單</li>
+                        <li>不承諾投資獲利保證</li>
+                        <li>僅提供教育訓練服務</li>
+                        <li>學員需獨立承擔投資風險</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section">
+        <div class="container">
+            <h2>✅ 我們的保證與承諾</h2>
+            <div class="guarantee-grid">
+                <div class="guarantee-card">
+                    <h3>🎓 教學品質保證</h3>
+                    <p>8年實戰經驗，上千位學員見證，課程內容經過市場驗證</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3>💰 退費保證</h3>
+                    <p>學不會全額退費，讓您零風險學習投資技能</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3>🎥 終身學習</h3>
+                    <p>一次付費終身觀看，不限時間次數，持續學習成長</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3>🤝 持續支援</h3>
+                    <p>專業助教、學員社群、客服支援，確保學習無障礙</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>聯繫我們</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📞 電話諮詢</h3>
+                    <p>專業課程顧問為您服務</p>
+                    <p><strong>服務時間：</strong>週一至週五 09:00-18:00</p>
+                    <a href="tel:+886-XXX-XXXXXX" class="cta-button">立即來電</a>
+                </div>
+                <div class="contact-card">
+                    <h3>💬 LINE諮詢</h3>
+                    <p>加入官方LINE獲得即時回覆</p>
+                    <p><strong>LINE ID：</strong>@soya</p>
+                    <a href="https://line.me/ti/p/~@soya" class="cta-button">加入LINE</a>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email諮詢</h3>
+                    <p>詳細問題歡迎來信詢問</p>
+                    <p><strong>信箱：</strong>info@massenlighten.com</p>
+                    <a href="mailto:info@massenlighten.com" class="cta-button">發送郵件</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 還有其他問題嗎？</h2>
+            <p>聯繫我們的專業顧問，獲得詳細解答</p>
+            <p>安全學習，放心投資</p>
+            <a href="tel:+886-XXX-XXXXXX" class="cta-button" style="margin-right: 1rem;">📞 電話諮詢</a>
+            <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 LINE諮詢</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="instructor.html">講師介紹</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+
+    <script>
+        function showCategory(category) {
+            // 隱藏所有內容
+            const contents = document.querySelectorAll('.category-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            // 移除所有活動標籤
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // 顯示選中的內容
+            document.getElementById(category).style.display = 'block';
+            
+            // 設置活動標籤
+            event.target.classList.add('active');
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = element.classList.contains('active');
+            
+            // 關閉所有其他FAQ
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // 如果當前不是活動狀態，則開啟
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        function searchFAQ() {
+            const searchTerm = event.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
