@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA女神課程大綱 - 小資致富煉金術25章節完整學習路徑</title>
+    <meta name="description" content="SOYA課程25章節完整大綱，從外匯基礎到MT4操作，裸K分析到策略模組化，循序漸進的學習路徑。">
+    <meta name="keywords" content="Soya課程內容,小資致富煉金術章節,裸K教學大綱,MT4教學,外匯課程章節">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Course Outline Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .learning-path {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .path-step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .path-step::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #764ba2;
+        }
+
+        .path-step:last-child::after {
+            display: none;
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chapter-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .chapter-number {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-content {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .chapter-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .chapter-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chapter-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .phase-divider {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            margin: 3rem 0 2rem 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .special-features {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .special-features h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .chapter-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .learning-path {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .path-step::after {
+                content: "↓";
+                right: 50%;
+                transform: translateX(50%);
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="instructor.html">講師介紹</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>小資致富煉金術 - 完整課程大綱</h1>
+            <p>25章節 + 4章複習課，從零基礎到交易高手的完整學習路徑</p>
+            <p>總時長：主課 7小時40分 + 複習 2小時30分 + 實體課 12小時</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>學習路徑</h2>
+            <div class="learning-path">
+                <div class="path-step">基礎理解</div>
+                <div class="path-step">操作技能</div>
+                <div class="path-step">分析基礎</div>
+                <div class="path-step">策略入門</div>
+                <div class="path-step">模組實戰</div>
+                <div class="path-step">課後補強</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="phase-divider">第一階段：基礎理解 (Chapter 1-5)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 1</div>
+                    <div class="chapter-title">外匯保證金基礎概念</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>什麼是外匯保證金交易</li>
+                            <li>全球外匯市場運作機制</li>
+                            <li>交易時間與市場特性</li>
+                            <li>貨幣對基本認識</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 2</div>
+                    <div class="chapter-title">交易商品介紹</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>主要貨幣對特性分析</li>
+                            <li>黃金交易特點與優勢</li>
+                            <li>商品流動性比較</li>
+                            <li>為什麼選擇黃金作為主要標的</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 3</div>
+                    <div class="chapter-title">交易成本與點差</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>點差的概念與計算</li>
+                            <li>隔夜利息機制</li>
+                            <li>手續費結構分析</li>
+                            <li>如何選擇合適的交易商</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 4</div>
+                    <div class="chapter-title">槓桿與保證金</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>槓桿原理與風險</li>
+                            <li>保證金需求計算</li>
+                            <li>強制平倉機制</li>
+                            <li>安全槓桿比例建議</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 5</div>
+                    <div class="chapter-title">市場參與者分析</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>央行政策影響</li>
+                            <li>機構投資人行為</li>
+                            <li>散戶交易特性</li>
+                            <li>市場情緒判讀</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-divider">第二階段：操作技能 (Chapter 6-10)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 6</div>
+                    <div class="chapter-title">MT4平台完整操作</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>平台介面詳細介紹</li>
+                            <li>圖表設定與優化</li>
+                            <li>下單操作實戰</li>
+                            <li>歷史資料查看</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 7</div>
+                    <div class="chapter-title">訂單類型與掛單</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>市價單與限價單</li>
+                            <li>停損與停利設定</li>
+                            <li>掛單策略應用</li>
+                            <li>訂單管理技巧</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 8</div>
+                    <div class="chapter-title">部分平倉與保本設定</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>分批出場策略</li>
+                            <li>保本點設定原理</li>
+                            <li>移動停損技巧</li>
+                            <li>獲利最大化方法</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 9</div>
+                    <div class="chapter-title">EA自動化設定</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>EA基本概念</li>
+                            <li>自動部分平倉設定</li>
+                            <li>程式化提醒系統</li>
+                            <li>避免長時間盯盤</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 10</div>
+                    <div class="chapter-title">交易記錄與分析</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>交易日誌建立</li>
+                            <li>績效分析方法</li>
+                            <li>錯誤檢討機制</li>
+                            <li>持續改進策略</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-divider">第三階段：分析基礎 (Chapter 11-15)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 11</div>
+                    <div class="chapter-title">K線圖基礎概念</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>K線的四個價位</li>
+                            <li>K線型態分類</li>
+                            <li>市場情緒解讀</li>
+                            <li>單根K線意義</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 12</div>
+                    <div class="chapter-title">裸K型態判斷系統</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>摒棄傳統技術指標</li>
+                            <li>SOYA獨創裸K分析法</li>
+                            <li>型態識別技巧</li>
+                            <li>直覺式市場判讀</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 13</div>
+                    <div class="chapter-title">支撐與阻力</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>關鍵價位識別</li>
+                            <li>支撐阻力轉換</li>
+                            <li>突破確認方法</li>
+                            <li>假突破辨識</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 14</div>
+                    <div class="chapter-title">趨勢線與通道</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>趨勢線繪製方法</li>
+                            <li>通道交易策略</li>
+                            <li>趨勢轉折信號</li>
+                            <li>角度與斜率分析</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 15</div>
+                    <div class="chapter-title">反轉與持續型態</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>頭肩型態識別</li>
+                            <li>三角形整理</li>
+                            <li>雙頂雙底確認</li>
+                            <li>型態失敗處理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-divider">第四階段：策略入門 (Chapter 16-20)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 16</div>
+                    <div class="chapter-title">獨創倉位管理系統</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>資金分配原則</li>
+                            <li>風險報酬比計算</li>
+                            <li>單筆風險控制</li>
+                            <li>總體風險管理</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 17</div>
+                    <div class="chapter-title">風險控管機制</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>「賠很少、賺很多」原則</li>
+                            <li>止損設定策略</li>
+                            <li>極小止損技巧</li>
+                            <li>風險參數優化</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 18</div>
+                    <div class="chapter-title">進出場時機判斷</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>最佳進場點位</li>
+                            <li>分批進場策略</li>
+                            <li>出場時機選擇</li>
+                            <li>獲利最大化技巧</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 19</div>
+                    <div class="chapter-title">多空市場攻略</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>多頭市場操作</li>
+                            <li>空頭市場策略</li>
+                            <li>震盪盤應對</li>
+                            <li>轉折點把握</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 20</div>
+                    <div class="chapter-title">基本面數據應對</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>重要經濟數據</li>
+                            <li>央行政策解讀</li>
+                            <li>新聞交易策略</li>
+                            <li>突發事件應對</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-divider">第五階段：模組實戰 (Chapter 21-25)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 21</div>
+                    <div class="chapter-title">突破交易模組</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>突破口識別</li>
+                            <li>突破確認方法</li>
+                            <li>假突破過濾</li>
+                            <li>突破後續追蹤</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 22</div>
+                    <div class="chapter-title">震盪盤模組</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>震盪區間界定</li>
+                            <li>高賣低買策略</li>
+                            <li>震盪末期判斷</li>
+                            <li>轉勢信號捕捉</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 23</div>
+                    <div class="chapter-title">趨勢追蹤模組</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>趨勢確認方法</li>
+                            <li>順勢交易策略</li>
+                            <li>回調進場時機</li>
+                            <li>趨勢結束信號</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 24</div>
+                    <div class="chapter-title">模擬實戰演練</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>模擬交易平台</li>
+                            <li>實戰案例分析</li>
+                            <li>策略綜合運用</li>
+                            <li>錯誤修正練習</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">Chapter 25</div>
+                    <div class="chapter-title">交易心法與成功守則</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>交易心理建設</li>
+                            <li>情緒管理技巧</li>
+                            <li>長期獲利思維</li>
+                            <li>持續學習態度</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-divider">第六階段：課後補強 (複習課程)</div>
+            <div class="chapter-grid">
+                <div class="chapter-card">
+                    <div class="chapter-number">複習1</div>
+                    <div class="chapter-title">核心概念總複習</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>重點概念整理</li>
+                            <li>常見問題解答</li>
+                            <li>學習盲點提醒</li>
+                            <li>知識點串聯</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">複習2</div>
+                    <div class="chapter-title">實戰技巧精進</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>高階技巧補充</li>
+                            <li>特殊情況應對</li>
+                            <li>策略優化建議</li>
+                            <li>個人化調整</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">複習3</div>
+                    <div class="chapter-title">案例深度解析</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>經典案例回顧</li>
+                            <li>成功交易剖析</li>
+                            <li>失敗經驗學習</li>
+                            <li>策略改進方向</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <div class="chapter-number">複習4</div>
+                    <div class="chapter-title">持續獲利之路</div>
+                    <div class="chapter-content">
+                        <ul>
+                            <li>長期規劃建議</li>
+                            <li>進階學習方向</li>
+                            <li>社群互動指導</li>
+                            <li>終身學習理念</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="special-features">
+        <div class="container">
+            <h3>🎯 課程獨家特色</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🎥 終身回看</h4>
+                    <p>不限時間次數，支援電腦、平板、手機多平台學習</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🤖 自動化系統</h4>
+                    <p>EA程式化提醒，無需長時間盯盤，適合上班族</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📊 實戰導向</h4>
+                    <p>每個章節都有實際操作，學完即可應用</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🎓 一對一指導</h4>
+                    <p>專業助教答疑，社群互動學習不孤單</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 準備開始您的財富自由之路？</h2>
+            <p>25章節完整課程，從零基礎到交易高手</p>
+            <p>2025年7月26-27日開課，立即報名享早鳥優惠</p>
+            <a href="tel:+886-XXX-XXXXXX" class="cta-button" style="margin-right: 1rem;">📞 電話諮詢</a>
+            <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 LINE諮詢</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="beginner-guide.html">新手指南</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="pricing.html">費用方案</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+</body>
+</html>
