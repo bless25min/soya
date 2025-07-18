@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA課程費用與付款方案 - 零利率分期、學費優惠價格</title>
+    <meta name="description" content="查看SOYA女神課程費用與多種付款方案。提供零利率分期、轉帳優惠、現場付款等選擇。一次付費終身學習，無隱藏費用。">
+    <meta name="keywords" content="Soya課程費用,外匯課程價錢,學費分期,零利率財商課程,SOYA女神價格,付款方案">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Pricing Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .price-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .price-highlight h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .price-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-badge {
+            background: #f093fb;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-note {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .price-includes {
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .price-includes h4 {
+            color: #f093fb;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .price-includes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-includes li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .price-includes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f093fb;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .payment-methods {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: #764ba2;
+        }
+
+        .payment-card.featured {
+            border-color: #f093fb;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .payment-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #764ba2;
+        }
+
+        .payment-card.featured .payment-title {
+            color: white;
+        }
+
+        .payment-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-card.featured .payment-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .payment-features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .payment-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .payment-card.featured .payment-features li {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .payment-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .payment-card.featured .payment-features li::before {
+            color: white;
+        }
+
+        .comparison-section {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .benefit {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .warning {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .neutral {
+            color: #6c757d;
+        }
+
+        .value-proposition {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .value-proposition h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #fff;
+        }
+
+        .guarantee-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .guarantee-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        .faq-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin: 1rem 0;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            position: relative;
+            color: #333;
+        }
+
+        .faq-question::after {
+            content: "+";
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #764ba2;
+        }
+
+        .faq-question.active::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 300px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .price-amount {
+                font-size: 2rem;
+            }
+            
+            .payment-grid,
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="pricing.html">費用方案</a></li>
+                <li><a href="faq.html">常見問題</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>課程費用與付款方案</h1>
+            <p>多種付款方式選擇，讓學習更輕鬆</p>
+            <p>一次付費，終身學習，無隱藏費用</p>
+        </div>
+    </section>
+
+    <section class="price-highlight">
+        <div class="container">
+            <h2>💎 課程價格</h2>
+            <div class="price-container">
+                <div class="price-badge">🔥 限時優惠</div>
+                <div class="price-amount">請洽客服</div>
+                <div class="price-note">專業顧問為您提供最優惠價格方案</div>
+                
+                <div class="price-includes">
+                    <h4>📦 課程包含內容</h4>
+                    <ul>
+                        <li>25章節完整線上課程（主課7小時40分）</li>
+                        <li>4章節複習課程（2小時30分）</li>
+                        <li>2天實體課程（12小時面對面教學）</li>
+                        <li>終身觀看權限，不限時間次數</li>
+                        <li>一對一專業助教指導</li>
+                        <li>學員專屬社群互動</li>
+                        <li>每日複盤教學服務</li>
+                        <li>程式化提醒系統</li>
+                        <li>MT4平台設定教學</li>
+                        <li>EA自動化工具</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-methods">
+        <div class="container">
+            <h2>💳 付款方式選擇</h2>
+            <div class="payment-grid">
+                <div class="payment-card featured">
+                    <div class="payment-icon">💳</div>
+                    <div class="payment-title">信用卡分期零利率</div>
+                    <div class="payment-description">
+                        最受歡迎的付款方式，分期無壓力，學習更輕鬆
+                    </div>
+                    <ul class="payment-features">
+                        <li>3期、6期、12期零利率</li>
+                        <li>支援各大銀行信用卡</li>
+                        <li>立即開始學習</li>
+                        <li>分期手續費全免</li>
+                        <li>安全便利的線上刷卡</li>
+                    </ul>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-icon">🏦</div>
+                    <div class="payment-title">銀行轉帳</div>
+                    <div class="payment-description">
+                        一次付清享受轉帳優惠價，最划算的付款方式
+                    </div>
+                    <ul class="payment-features">
+                        <li>轉帳專屬優惠價格</li>
+                        <li>免手續費優惠</li>
+                        <li>安全的銀行轉帳</li>
+                        <li>提供正式收據</li>
+                        <li>3個工作天確認入帳</li>
+                    </ul>
+                </div>
+                
+                <div class="payment-card">
+                    <div class="payment-icon">💰</div>
+                    <div class="payment-title">現場付款</div>
+                    <div class="payment-description">
+                        實體課程現場繳費，與講師面對面諮詢
+                    </div>
+                    <ul class="payment-features">
+                        <li>現金或刷卡皆可</li>
+                        <li>現場諮詢服務</li>
+                        <li>立即開通課程權限</li>
+                        <li>可當面了解課程細節</li>
+                        <li>提供正式發票</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="container">
+            <h2>📊 付款方式比較</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>信用卡分期</th>
+                        <th>銀行轉帳</th>
+                        <th>現場付款</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>價格優惠</strong></td>
+                        <td class="neutral">標準價格</td>
+                        <td class="benefit">轉帳優惠價</td>
+                        <td class="neutral">標準價格</td>
+                    </tr>
+                    <tr>
+                        <td><strong>分期選項</strong></td>
+                        <td class="benefit">3/6/12期零利率</td>
+                        <td class="warning">無分期選項</td>
+                        <td class="warning">無分期選項</td>
+                    </tr>
+                    <tr>
+                        <td><strong>開通速度</strong></td>
+                        <td class="benefit">立即開通</td>
+                        <td class="neutral">3個工作天</td>
+                        <td class="benefit">立即開通</td>
+                    </tr>
+                    <tr>
+                        <td><strong>手續費</strong></td>
+                        <td class="benefit">完全免費</td>
+                        <td class="benefit">完全免費</td>
+                        <td class="benefit">完全免費</td>
+                    </tr>
+                    <tr>
+                        <td><strong>付款便利性</strong></td>
+                        <td class="benefit">線上刷卡</td>
+                        <td class="neutral">ATM/網銀轉帳</td>
+                        <td class="neutral">現場繳費</td>
+                    </tr>
+                    <tr>
+                        <td><strong>適合對象</strong></td>
+                        <td class="neutral">小資族分期</td>
+                        <td class="neutral">一次付清者</td>
+                        <td class="neutral">面對面諮詢者</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="value-proposition">
+        <div class="container">
+            <h2>💡 投資價值分析</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>🎓 學習價值</h3>
+                    <div class="value-number">29</div>
+                    <p>個完整章節，從零基礎到專業交易者的完整學習路徑</p>
+                </div>
+                <div class="value-card">
+                    <h3>⏰ 時間價值</h3>
+                    <div class="value-number">22+</div>
+                    <p>小時的專業課程內容，加上終身回看權限</p>
+                </div>
+                <div class="value-card">
+                    <h3>💰 成本對比</h3>
+                    <div class="value-number">1/10</div>
+                    <p>相比一對一教學費用，團體課程成本更實惠</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎯 成功率</h3>
+                    <div class="value-number">78%</div>
+                    <p>學員實現穩定獲利比例，投資教育回報率高</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section">
+        <div class="container">
+            <h2>✅ 價格保證與承諾</h2>
+            <div class="guarantee-content">
+                <div class="guarantee-badge">🛡️ 價格透明保證</div>
+                <p style="font-size: 1.2rem; margin: 2rem 0;">
+                    我們承諾一次性收費，絕無隱藏費用。課程費用包含所有學習內容和服務，
+                    不會有額外的會員費、分析費或其他收費項目。
+                </p>
+                
+                <div class="guarantee-badge">💯 品質保證</div>
+                <p style="font-size: 1.2rem; margin: 2rem 0;">
+                    8年教學經驗，上千位學員見證。課程內容經過市場驗證，
+                    確保每位學員都能學到實用的投資技能。
+                </p>
+                
+                <div class="guarantee-badge">🔄 退費保證</div>
+                <p style="font-size: 1.2rem; margin: 2rem 0;">
+                    學不會全額退費保證，讓您零風險學習。我們對課程品質非常有信心，
+                    確保每位學員都能達到學習目標。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>❓ 價格相關常見問題</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    課程費用具體是多少？有早鳥優惠嗎？
+                </div>
+                <div class="faq-answer">
+                    課程費用會根據報名時間和付款方式有所不同。我們經常提供早鳥優惠和限時特價，
+                    請聯繫客服獲得最新的優惠價格。透過銀行轉帳付款還可享受額外折扣。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    分期付款真的零利率嗎？有什麼條件限制？
+                </div>
+                <div class="faq-answer">
+                    是的，我們提供真正的零利率分期付款，沒有任何隱藏費用。支援3期、6期、12期選擇，
+                    只要使用有效的信用卡即可申請，無其他條件限制。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    付款後還會有其他費用嗎？
+                </div>
+                <div class="faq-answer">
+                    完全沒有！我們承諾一次付費包含所有服務，無會員費、無分析費、無任何額外收費。
+                    所有教學內容、助教服務、社群支援都已包含在課程費用中。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    如果對課程不滿意，真的可以退費嗎？
+                </div>
+                <div class="faq-answer">
+                    是的，我們提供學不會全額退費保證。具體退費條件包括完整參與課程學習、
+                    完成指定練習等。詳細的退費政策請聯繫客服了解，我們會提供正式的保證文件。
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    可以開立發票嗎？公司報帳可以嗎？
+                </div>
+                <div class="faq-answer">
+                    可以！我們是合法註冊的公司，可以開立正式發票供公司報帳使用。
+                    發票抬頭可以是個人或公司名稱，請在報名時告知客服您的發票需求。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 立即了解最新優惠價格</h2>
+            <p>專業課程顧問為您量身規劃付款方案</p>
+            <p>把握限時優惠，開啟財富自由之路</p>
+            <a href="tel:+886-XXX-XXXXXX" class="cta-button" style="margin-right: 1rem;">📞 電話詢價</a>
+            <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 LINE詢價</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="refund-policy.html">退費保證</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = element.classList.contains('active');
+            
+            // 關閉所有其他FAQ
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // 如果當前不是活動狀態，則開啟
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
