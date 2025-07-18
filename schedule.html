@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOYA課程時間與地點 - 2025年開課日期與台北財商課程資訊</title>
+    <meta name="description" content="查看SOYA女神課程最新開課時間，2025年7月26-27日台北實體課程。了解下一期開課日期，提供課程提醒服務。">
+    <meta name="keywords" content="Soya課程時間,外匯課程日期,台北財商課程,下一期開課,SOYA女神開課時間,課程地點">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #764ba2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f0f0" width="1200" height="400"/><text x="600" y="200" text-anchor="middle" font-size="24" fill="%23999">Schedule Hero</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #764ba2;
+        }
+
+        .current-course {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .current-course h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .course-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .course-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+        }
+
+        .course-date {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .course-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-item h4 {
+            color: #f093fb;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-item p {
+            font-size: 1.1rem;
+        }
+
+        .countdown-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .countdown-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            min-width: 120px;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .schedule-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .schedule-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .schedule-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .location-section {
+            background: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .location-info {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-info h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .location-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .location-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .location-info li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .location-info li::before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+        }
+
+        .map-placeholder {
+            background: #e9ecef;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            color: #666;
+            border: 2px dashed #ccc;
+        }
+
+        .upcoming-courses {
+            background: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .course-timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-left: 5px solid #764ba2;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            background: #e9ecef;
+        }
+
+        .timeline-item.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: 5px solid #f093fb;
+        }
+
+        .timeline-date {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item.featured .timeline-date {
+            color: #f093fb;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .status-available {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-coming {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .status-full {
+            background: #dc3545;
+            color: white;
+        }
+
+        .reminder-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .reminder-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .reminder-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #f093fb;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .course-date {
+                font-size: 2rem;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .countdown-item {
+                min-width: 100px;
+                padding: 1.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .location-grid,
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SOYA 女神財商學院</div>
+            <ul class="nav-links">
+                <li><a href="index.html">課程總覽</a></li>
+                <li><a href="course-outline.html">課程大綱</a></li>
+                <li><a href="technical-analysis.html">技術分析</a></li>
+                <li><a href="testimonials.html">學員評價</a></li>
+                <li><a href="schedule.html">開課時間</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>課程時間與地點</h1>
+            <p>掌握最新開課資訊</p>
+            <p>提前規劃您的學習時程</p>
+        </div>
+    </section>
+
+    <section class="current-course">
+        <div class="container">
+            <h2>🔥 最新開課資訊</h2>
+            <div class="course-highlight">
+                <div class="course-title">小資致富煉金術｜外匯進階實戰班</div>
+                <div class="course-date">2025年 7月 26-27日</div>
+                <p>週六、週日 兩日密集班</p>
+                
+                <div class="course-details">
+                    <div class="detail-item">
+                        <h4>📅 上課日期</h4>
+                        <p>7月26日-27日</p>
+                        <p>(週六、週日)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>⏰ 上課時間</h4>
+                        <p>10:00-17:00</p>
+                        <p>(含午休1小時)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>📍 上課地點</h4>
+                        <p>台北市中心</p>
+                        <p>(詳細地址報名後通知)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>👥 招生狀況</h4>
+                        <p>火熱招生中</p>
+                        <p>名額有限</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <div class="container">
+            <h2>⏰ 距離開課還有</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">0</div>
+                    <div class="countdown-label">天</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">0</div>
+                    <div class="countdown-label">小時</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">0</div>
+                    <div class="countdown-label">分鐘</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">0</div>
+                    <div class="countdown-label">秒</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>詳細課程時程</h2>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <h3>📅 第一天課程 (7/26 週六)</h3>
+                    <table class="schedule-table">
+                        <tr>
+                            <th>時間</th>
+                            <th>課程內容</th>
+                        </tr>
+                        <tr>
+                            <td>09:30-10:00</td>
+                            <td>報到與開場</td>
+                        </tr>
+                        <tr>
+                            <td>10:00-12:00</td>
+                            <td>外匯基礎概念與市場分析</td>
+                        </tr>
+                        <tr>
+                            <td>12:00-13:00</td>
+                            <td>午餐時間</td>
+                        </tr>
+                        <tr>
+                            <td>13:00-15:00</td>
+                            <td>裸K分析法實戰教學</td>
+                        </tr>
+                        <tr>
+                            <td>15:00-15:30</td>
+                            <td>茶歇時間</td>
+                        </tr>
+                        <tr>
+                            <td>15:30-17:00</td>
+                            <td>MT4平台操作與設定</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="schedule-card">
+                    <h3>📅 第二天課程 (7/27 週日)</h3>
+                    <table class="schedule-table">
+                        <tr>
+                            <th>時間</th>
+                            <th>課程內容</th>
+                        </tr>
+                        <tr>
+                            <td>10:00-12:00</td>
+                            <td>風險控管與倉位管理</td>
+                        </tr>
+                        <tr>
+                            <td>12:00-13:00</td>
+                            <td>午餐時間</td>
+                        </tr>
+                        <tr>
+                            <td>13:00-15:00</td>
+                            <td>交易策略與模組應用</td>
+                        </tr>
+                        <tr>
+                            <td>15:00-15:30</td>
+                            <td>茶歇時間</td>
+                        </tr>
+                        <tr>
+                            <td>15:30-17:00</td>
+                            <td>實戰演練與Q&A</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="container">
+            <h2>上課地點資訊</h2>
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>📍 教室地點</h3>
+                    <p><strong>地址：</strong>台北市中心商業區</p>
+                    <p><strong>詳細地址：</strong>報名成功後另行通知</p>
+                    
+                    <h4>🚇 交通方式</h4>
+                    <ul>
+                        <li>捷運：多條線路交會，交通便利</li>
+                        <li>公車：多條公車路線可達</li>
+                        <li>開車：附近有多個付費停車場</li>
+                        <li>高鐵/台鐵：距離車站約15分鐘車程</li>
+                    </ul>
+                    
+                    <h4>🏢 教室設施</h4>
+                    <ul>
+                        <li>現代化多媒體教室</li>
+                        <li>高速無線網路</li>
+                        <li>舒適的學習環境</li>
+                        <li>茶水與簡餐提供</li>
+                    </ul>
+                </div>
+                
+                <div class="map-placeholder">
+                    <h3>🗺️ 地圖位置</h3>
+                    <p>詳細地圖將在報名確認後提供</p>
+                    <p>包含完整的交通指引和停車資訊</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-courses">
+        <div class="container">
+            <h2>後續開課計畫</h2>
+            <div class="course-timeline">
+                <div class="timeline-item featured">
+                    <div class="timeline-date">2025年 7月 26-27日</div>
+                    <div class="timeline-title">小資致富煉金術｜外匯進階實戰班</div>
+                    <p>實體課程 + 線上回放，完整25章節教學</p>
+                    <span class="timeline-status status-available">🔥 火熱招生中</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年 9月 14-15日</div>
+                    <div class="timeline-title">小資致富煉金術｜第二期</div>
+                    <p>應廣大學員要求，加開第二期課程</p>
+                    <span class="timeline-status status-coming">📅 即將開放報名</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年 11月 23-24日</div>
+                    <div class="timeline-title">進階策略深化班</div>
+                    <p>針對已完成基礎課程的學員開設進階班</p>
+                    <span class="timeline-status status-coming">🎓 規劃中</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2025年 12月</div>
+                    <div class="timeline-title">年終成果檢討會</div>
+                    <p>學員年度成果分享與經驗交流</p>
+                    <span class="timeline-status status-coming">🎉 籌備中</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reminder-section">
+        <div class="container">
+            <h2>📢 開課提醒服務</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                不想錯過任何開課資訊？加入我們的提醒服務！
+            </p>
+            
+            <div class="reminder-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">手機號碼</label>
+                        <input type="tel" id="phone" name="phone" placeholder="請輸入您的手機號碼" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="請輸入您的Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course">感興趣的課程</label>
+                        <select id="course" name="course" required>
+                            <option value="">請選擇課程</option>
+                            <option value="basic">小資致富煉金術（基礎班）</option>
+                            <option value="advanced">進階策略深化班</option>
+                            <option value="all">所有課程資訊</option>
+                        </select>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button type="submit" class="cta-button">🔔 加入提醒服務</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>🚀 立即預約您的學習席位</h2>
+            <p>7月26-27日課程火熱招生中，名額有限</p>
+            <p>現在報名享早鳥優惠價格</p>
+            <a href="tel:+886-XXX-XXXXXX" class="cta-button" style="margin-right: 1rem;">📞 電話報名</a>
+            <a href="https://line.me/ti/p/~@soya" class="cta-button">💬 LINE報名</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">課程總覽</a>
+                <a href="course-outline.html">課程大綱</a>
+                <a href="technical-analysis.html">技術分析</a>
+                <a href="risk-management.html">風險控管</a>
+                <a href="testimonials.html">學員評價</a>
+                <a href="pricing.html">費用方案</a>
+            </div>
+            <p>&copy; 2025 SOYA 女神財商學院 | 眾曜智庫股份有限公司</p>
+        </div>
+    </footer>
+
+    <script>
+        // 倒數計時器
+        function updateCountdown() {
+            const targetDate = new Date('2025-07-26T10:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // 每秒更新倒數計時
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // 立即執行一次
+
+        // 表單提交處理
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感謝您的訂閱！我們會在新課程開放報名時第一時間通知您。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
